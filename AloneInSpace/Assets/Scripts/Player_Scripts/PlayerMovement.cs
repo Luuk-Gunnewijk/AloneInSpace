@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    [SerializeField] float moveSpeed;
 
-    public float groundDrag;
+    [SerializeField] float groundDrag;
 
     [Header("Ground Check")]
     public float playerHeight;
