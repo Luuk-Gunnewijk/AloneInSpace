@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PlayerRaycast_Script : MonoBehaviour
 {
-    public bool isRayCastTrue = false;
+    InteractButton_Script myInteractButton_Script;
 
     [SerializeField] LayerMask myLayerMask;
     RaycastHit hitinfo;
+
+    private void Awake()
+    {
+        myInteractButton_Script = FindAnyObjectByType<InteractButton_Script>();
+    }
     void Update()
     {
         Raycast();
@@ -15,15 +20,17 @@ public class PlayerRaycast_Script : MonoBehaviour
 
     void Raycast()
     {
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, 5f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, 20f, myLayerMask))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection (Vector3.forward) * hitinfo.distance, Color.green);
-            isRayCastTrue = true;
+            myInteractButton_Script.IsInteractButtonTrue = true;
+
+            //Debug.DrawRay(transform.position, transform.TransformDirection (Vector3.forward) * hitinfo.distance, Color.green);
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.blue);
-            isRayCastTrue = false;
+            myInteractButton_Script.IsInteractButtonTrue = false;
+
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.blue);
         }
     }
 }
