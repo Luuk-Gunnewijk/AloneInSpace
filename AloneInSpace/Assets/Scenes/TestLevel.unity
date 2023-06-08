@@ -6190,16 +6190,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369245859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245b1639a75bd1547a6a84ade34fd4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 026e291dcacb9684b85b41606273911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1369245863}
-  player: {fileID: 1531221197}
-  openHeight: 9.4
-  closeHeight: 0
-  smoothTime: 0.5
-  proximityDistance: 5
-  isOpen: 0
+  doorAnimator: {fileID: 1369245864}
 --- !u!1 &1437514180
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,7 +7034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941281110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.1837, y: 0.41383827, z: 5.1837}
   m_ConstrainProportionsScale: 0
   m_Children:
